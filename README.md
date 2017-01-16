@@ -25,7 +25,7 @@ SELECT
 campaigns.title, campaigns.blurb, pledges.body, campaigns.currency, pledges.amount, campaigns.ending_date   
 FROM  
 pledges join campaigns on  pledges.campaign_id = campaigns.id
-WHERE
+WHERE 
 body like '%shirt%' AND amount < 50
 
 ### Licence

@@ -1,6 +1,6 @@
 #KickScrap
 
-Simple Kickstarter webs scraper python script that gets basic details of currently live campaigns and the pledges using selenium.
+Simple webs scraper python script that gets basic details of currently live campaigns and the pledges using selenium.
 
 Uses SQLite as the database and stores the data into two tables campaigns and pledges.
 
@@ -14,7 +14,7 @@ I also could only get it working on the Firefox nightly build due to something w
 
 The script requires no parameters and the database is named KickScrapeYEAR_TIME.SQLite
 
-You can modify the QUERY_STRING to change the filtering on the script. An easy way to do this is to go to www.kickstarter.com/discover/advanced?raised=1 and play around with the advanced setting and other options until your happy then at the end add "&format=json&page="
+You can modify the QUERY_STRING to change the filtering on the script. An easy way to do this is to go to /discover/advanced?raised=1 and play around with the advanced setting and other options until your happy then at the end add "&format=json&page="
 
 I use DBeaver to query the database but you can use whatever you want.
 
@@ -25,7 +25,7 @@ SELECT
 campaigns.title, campaigns.blurb, pledges.body, campaigns.currency, pledges.amount, campaigns.ending_date   
 FROM  
 pledges join campaigns on  pledges.campaign_id = campaigns.id
-WHERE 
+WHERE
 body like '%shirt%' AND amount < 50
 
 ### Licence

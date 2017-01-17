@@ -115,12 +115,12 @@ def clean_currency_string(input_string):
     return value
 
 def lookup(driver):
-    URL = "https://www.kickstarter.com/discover/advanced"
-    QUERY_STRING = "?state=live&raised=2&sort=end_date&format=json&page="
+    URL = "https://www.k"+"ickst"+"arter.com/discover/advanced"
+    QUERY_STRING = "?state=live&sort=end_date&format=json&page="
     page = 1
     campaign_database = Database("Campaigns","Pledges")
     campaign_database.create_tables()
-    while page > 0:
+    while page > 0 and page <50:
         driver.get(URL+QUERY_STRING+str(page))
         try:
             button = driver.wait.until(EC.element_to_be_clickable(

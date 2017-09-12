@@ -1,4 +1,4 @@
-#KickScrap
+# KickScrap
 
 Simple webs scraper python script that gets basic details of currently live campaigns and the pledges using selenium.
 
